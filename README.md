@@ -37,3 +37,5 @@ The following attributes have been implemented so far:
 * `DateTimePrecisionAttribute` - change the precision of a datetime2 or datetimeoffset type
 
 Adding further attributes is simple - take a look at the implementation of the existing attributes for an example!
+
+This project is an extension of [this StackOverflow answer](http://stackoverflow.com/a/15386883/163495)
