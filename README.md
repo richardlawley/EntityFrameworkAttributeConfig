@@ -12,6 +12,11 @@ Allows you to configure properties by placing attributes on the properties of th
         public decimal PreciseNumber { get; set; }
     }
     
+Install from nuget:
+
+    PM> Install-Package EFAttributeConfig
+
+    
 This requires two lines to be added to your `OnModelCreating` method:
 
     using RichardLawley.EF.AttributeConfig;  // <-- Add this
