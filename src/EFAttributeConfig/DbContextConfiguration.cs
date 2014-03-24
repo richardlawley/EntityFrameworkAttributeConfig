@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Configuration;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace EFAttributeConfig
+namespace RichardLawley.EF.AttributeConfig
 {
 	/// <summary>
 	/// Extension methods to apply the configuration attributes
@@ -53,7 +50,7 @@ namespace EFAttributeConfig
 					LambdaExpression lambdaExpression = Expression.Lambda(property, true, new ParameterExpression[] { param });
 
 					MethodInfo methodInfo = entityConfig.GetType().GetMethod("Property", new[] { lambdaExpression.GetType() });
-					PrimitivePropertyConfiguration propertyConfig = methodInfo.Invoke(entityConfig, new[] { lambdaExpression }) 
+					PrimitivePropertyConfiguration propertyConfig = methodInfo.Invoke(entityConfig, new[] { lambdaExpression })
 						as PrimitivePropertyConfiguration;
 
 					propAttr.attr.Configure(propertyConfig);

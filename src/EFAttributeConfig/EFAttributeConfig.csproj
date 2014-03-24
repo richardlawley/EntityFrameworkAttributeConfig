@@ -7,10 +7,11 @@
     <ProjectGuid>{D85757FB-9CE4-4A8B-9280-D0DAD6881878}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EFAttributeConfig</RootNamespace>
+    <RootNamespace>RichardLawley.EF.AttributeConfig</RootNamespace>
     <AssemblyName>EFAttributeConfig</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
