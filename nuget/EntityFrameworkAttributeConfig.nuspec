@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+	<id>$id$</id>
+	<version>$version$</version>
+	<authors>Richard Lawley</authors>
+	<owners>Richard Lawley</owners>
+	<requireLicenseAcceptance>false</requireLicenseAcceptance>
+	<description>Enables configuration of Entity Properties via attributes on the model class</description>
+	<releaseNotes></releaseNotes>
+	<copyright>Copyright 2014 Richard Lawley</copyright>
+	<tags>EntityFramework</tags>
+	<dependencies>
+	</dependencies>
+  </metadata>
+  <files>
+	<file src="bin\Release\EFAttributeConfig.dll" target="lib\net40" />
+  </files>
+</package>

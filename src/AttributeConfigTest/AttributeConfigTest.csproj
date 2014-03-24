@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D85757FB-9CE4-4A8B-9280-D0DAD6881878}</ProjectGuid>
+    <ProjectGuid>{95A73DDA-AF66-4ADF-BB27-3273F140051F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RichardLawley.EF.AttributeConfig</RootNamespace>
-    <AssemblyName>EFAttributeConfig</AssemblyName>
+    <RootNamespace>AttributeConfigTest</RootNamespace>
+    <AssemblyName>AttributeConfigTest</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,15 +53,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DateTimePrecisionAttribute.cs" />
-    <Compile Include="DbContextConfiguration.cs" />
-    <Compile Include="DecimalPrecisionAttribute.cs" />
-    <Compile Include="EFPropertyConfigurationAttribute.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="TestContext.cs" />
+    <Compile Include="TestEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EFAttributeConfig\EFAttributeConfig.csproj">
+      <Project>{d85757fb-9ce4-4a8b-9280-d0dad6881878}</Project>
+      <Name>EFAttributeConfig</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

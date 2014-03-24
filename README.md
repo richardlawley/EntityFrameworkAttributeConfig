@@ -12,12 +12,23 @@ Allows you to configure properties by placing attributes on the properties of th
         public decimal PreciseNumber { get; set; }
     }
     
-This requires a single line to be added to your `OnModelCreating` method:
+This requires two lines to be added to your `OnModelCreating` method:
 
-    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    using RichardLawley.EF.AttributeConfig;  // <-- Add this
+
+    public class TestContext : DbContext 
     {
-        base.OnModelCreating(modelBuilder);
-        
-        // Apply Configuration Attributes from Assembly including type "TestContext"
-        modelBuilder.ApplyConfigurationAttributes(typeof(TestContext).Assembly);
+		protected override void OnModelCreating(DbModelBuilder modelBuilder)
+		{
+		    base.OnModelCreating(modelBuilder);
+		    
+		    modelBuilder.ApplyConfigurationAttributes(typeof(TestContext).Assembly);  // <-- Add this
+		}
     }
+
+The following attributes have been implemented so far:
+
+* `DecimalPrecisionAttribute` - change the precision of a decimal
+* `DateTimePrecisionAttribute` - change the precision of a datetime2 or datetimeoffset type
+
+Adding further attributes is simple - take a look at the implementation of the existing attributes for an example!
