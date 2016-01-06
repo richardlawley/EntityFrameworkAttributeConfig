@@ -16,7 +16,8 @@ namespace AttributeConfigTest
 		{
 			base.OnModelCreating(modelBuilder);
 
-			modelBuilder.ApplyConfigurationAttributes(typeof(TestContext).Assembly);
+			modelBuilder.Conventions.Add(new DateTimePrecisionAttributeConvention());
+			modelBuilder.Conventions.Add(new DecimalPrecisionAttributeConvention());
 		}
 	}
 }

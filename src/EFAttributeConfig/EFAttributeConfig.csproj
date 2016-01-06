@@ -56,7 +56,8 @@
     <Compile Include="DateTimePrecisionAttribute.cs" />
     <Compile Include="DbContextConfiguration.cs" />
     <Compile Include="DecimalPrecisionAttribute.cs" />
-    <Compile Include="EFPropertyConfigurationAttribute.cs" />
+    <Compile Include="DateTimePrecisionAttributeConvention.cs" />
+    <Compile Include="DecimalPrecisionAttributeConvention.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

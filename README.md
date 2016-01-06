@@ -16,10 +16,8 @@ Install from nuget:
 
     PM> Install-Package EFAttributeConfig
 
-    
-This requires two lines to be added to your `OnModelCreating` method:
 
-    using RichardLawley.EF.AttributeConfig;  // <-- Add this
+For each type of precision attribute you wish to use, add a line to your `OnModelCreating` method:
 
     public class TestContext : DbContext 
     {
@@ -27,7 +25,9 @@ This requires two lines to be added to your `OnModelCreating` method:
 		{
 		    base.OnModelCreating(modelBuilder);
 		    
-		    modelBuilder.ApplyConfigurationAttributes(typeof(TestContext).Assembly);  // <-- Add this
+            // Add conventions for Precision Attributes
+		    modelBuilder.Conventions.Add(new DecimalPrecisionAttributeConvention());
+            modelBuilder.Conventions.Add(new DateTimePrecisionAttributeConvention());
 		}
     }
 
@@ -38,4 +38,4 @@ The following attributes have been implemented so far:
 
 Adding further attributes is simple - take a look at the implementation of the existing attributes for an example!
 
-This project is an extension of [this StackOverflow answer](http://stackoverflow.com/a/15386883/163495)
+This project is an extension of [this StackOverflow answer](http://stackoverflow.com/a/15386883/163495).  Thanks to @richi2666 for the suggestion of using conventions instead of Reflection.

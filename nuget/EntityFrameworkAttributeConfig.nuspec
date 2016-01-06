@@ -8,7 +8,7 @@
 	<requireLicenseAcceptance>false</requireLicenseAcceptance>
 	<description>Enables configuration of Entity Properties via attributes on the model class</description>
 	<releaseNotes></releaseNotes>
-	<copyright>Copyright 2014 Richard Lawley</copyright>
+	<copyright>Copyright 2016 Richard Lawley</copyright>
 	<tags>EntityFramework</tags>
 	<dependencies>
 	</dependencies>

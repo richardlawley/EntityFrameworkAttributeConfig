@@ -8,7 +8,7 @@ namespace RichardLawley.EF.AttributeConfig
 	/// Configures the precision of a decimal type within the datastore
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Property, Inherited = false, AllowMultiple = false)]
-	public sealed class DecimalPrecisionAttribute : EFPropertyConfigurationAttribute
+	public sealed class DecimalPrecisionAttribute : Attribute
 	{
 		public DecimalPrecisionAttribute(byte precision, byte scale)
 		{
@@ -19,12 +19,5 @@ namespace RichardLawley.EF.AttributeConfig
 		public byte Precision { get; set; }
 
 		public byte Scale { get; set; }
-
-		public override void Configure(PrimitivePropertyConfiguration property)
-		{
-			DecimalPropertyConfiguration decimalProperty = property as DecimalPropertyConfiguration;
-			if (decimalProperty == null) { throw new ArgumentException("property should be DecimalPropertyConfiguration"); }
-			decimalProperty.HasPrecision(Precision, Scale);
-		}
 	}
 }
